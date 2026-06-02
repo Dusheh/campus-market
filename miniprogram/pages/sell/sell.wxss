@@ -1,0 +1,90 @@
+.search-bar {
+  margin-bottom: 20rpx;
+}
+
+.search-input {
+  background: #ffffff;
+  border-radius: 40rpx;
+  padding: 16rpx 30rpx;
+  font-size: 28rpx;
+}
+
+.category-tabs {
+  white-space: nowrap;
+  margin-bottom: 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.tab-item {
+  display: inline-block;
+  padding: 12rpx 30rpx;
+  margin-right: 20rpx;
+  background: #ffffff;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.tab-item.active {
+  background: #4CAF50;
+  color: #ffffff;
+}
+
+.card-header {
+  margin-bottom: 16rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+}
+
+.card-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.avatar-sm {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.seller-name {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.time {
+  font-size: 22rpx;
+  color: #ccc;
+}
+
+.float-btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 120rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 16rpx rgba(76,175,80,0.4);
+}
+
+.float-icon {
+  font-size: 50rpx;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.empty {
+  text-align: center;
+  color: #ccc;
+  padding: 100rpx 0;
+}
