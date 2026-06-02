@@ -1,0 +1,21 @@
+<!-- 消息列表 -->
+<view class="container">
+  <view class="chat-list">
+    <block wx:for="{{chats}}" wx:key="id">
+      <view class="chat-item flex-row" bindtap="goChat" data-id="{{item.id}}">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="flex-1">
+          <view class="flex-between">
+            <text class="name">{{item.name}}</text>
+            <text class="time">{{item.lastTime}}</text>
+          </view>
+          <view class="flex-between">
+            <text class="last-msg text-ellipsis">{{item.lastMsg}}</text>
+            <view class="badge" wx:if="{{item.unread > 0}}">{{item.unread}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view wx:if="{{chats.length === 0}}" class="empty">暂无消息</view>
+  </view>
+</view>
