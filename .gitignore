@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Go
+backend/bin/
+backend/vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# WeChat Mini Program
+miniprogram/package-lock.json
