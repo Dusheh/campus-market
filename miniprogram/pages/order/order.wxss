@@ -1,0 +1,62 @@
+.order-tabs {
+  display: flex;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  font-size: 26rpx;
+  color: #666;
+  border-radius: 12rpx;
+}
+
+.tab-item.active {
+  background: #4CAF50;
+  color: #ffffff;
+}
+
+.order-header {
+  margin-bottom: 12rpx;
+}
+
+.status {
+  font-size: 24rpx;
+}
+
+.status.pending { color: #FF9800; }
+.status.ongoing { color: #1976D2; }
+.status.done { color: #4CAF50; }
+
+.order-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.order-info {
+  margin-bottom: 16rpx;
+}
+
+.avatar-sm {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20rpx;
+}
+
+.empty {
+  text-align: center;
+  color: #ccc;
+  padding: 100rpx 0;
+}
