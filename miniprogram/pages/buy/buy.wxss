@@ -1,0 +1,61 @@
+/* 买块 */
+.search-bar {
+  padding: 24rpx;
+}
+
+.search-input {
+  width: 100%;
+  height: 72rpx;
+  background-color: #f0f0f0;
+  border-radius: 36rpx;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+/*Y列表(*/
+.list {
+  padding: 0 24rpx;
+}
+
+.card {
+  margin-bottom: 24rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin: 16rpx 0;
+}
+
+.card-desc {
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 16rpx;
+}
+
+.card-footer {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 发布按钮 */
+.float-btn {
+  position: fixed;
+  bottom: 64rpx;
+  right: 32rpx;
+  width: 88rpx;
+  height: 88rpx;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6rpx 24rpx rgba(76, 175, 80, 0.4);
+}
+
+.float-icon {
+  color: #ffffff;
+  font-size: 48rpx;
+  font-weight: 300;
+}
