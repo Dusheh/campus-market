@@ -1,0 +1,33 @@
+<!-- 订单列表 -->
+<view class="container">
+  <view class="order-tabs">
+    <view class="tab-item {{currentTab === 'all' ? 'active' : ''}}" bindtap="switchTab" data-tab="all">全部</view>
+    <view class="tab-item {{currentTab === 'pending' ? 'active' : ''}}" bindtap="switchTab" data-tab="pending">待处理</view>
+    <view class="tab-item {{currentTab === 'ongoing' ? 'active' : ''}}" bindtap="switchTab" data-tab="ongoing">进行中</view>
+    <view class="tab-item {{currentTab === 'done' ? 'active' : ''}}" bindtap="switchTab" data-tab="done">已完成</view>
+  </view>
+
+  <view class="order-list">
+    <block wx:for="{{orders}}" wx:key="id">
+      <view class="card">
+        <view class="order-header flex-between">
+          <text class="tag {{item.type === 'service' ? 'tag-service' : 'tag-goods'}}">{{item.type === 'service' ? '服务' : '物品'}}</text>
+          <text class="status {{item.status}}">{{item.statusText}}</text>
+        </view>
+        <view class="order-title text-ellipsis">{{item.title}}</view>
+        <view class="order-info flex-between">
+          <view class="flex-row">
+            <image class="avatar-sm" src="{{item.counterParty.avatar}}"></image>
+            <text>{{item.counterParty.name}}</text>
+          </view>
+          <text class="price">¥{{item.price}}</text>
+        </view>
+        <view class="order-actions" wx:if="{{item.status === 'pending'}}">
+          <button class="btn-outline" size="mini">取消</button>
+          <button class="btn-primary" size="mini">确认</button>
+        </view>
+      </view>
+    </block>
+    <view wx:if="{{orders.length === 0}}" class="empty">暂无订单</view>
+  </view>
+</view>
