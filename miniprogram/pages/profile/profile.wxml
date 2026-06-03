@@ -1,0 +1,48 @@
+<!-- 个人中心 -->
+<view class="container">
+  <view class="profile-header card">
+    <image class="avatar-lg" src="{{userInfo.avatar}}"></image>
+    <text class="nickname">{{userInfo.nickname}}</text>
+    <text class="bio">{{userInfo.bio}}</text>
+  </view>
+
+  <view class="stats-bar">
+    <view class="stat-item">
+      <text class="stat-num">{{userInfo.serviceCount}}</text>
+      <text class="stat-label">服务</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">{{userInfo.goodsCount}}</text>
+      <text class="stat-label">物品</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">{{userInfo.orderCount}}</text>
+      <text class="stat-label">订单</text>
+    </view>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item" bindtap="navTo" data-url="/pages/order/order">
+      <text class="menu-icon">📓</text>
+      <text>丙询订单</text>
+      <text class="menu-arrow">〾</text>
+    </view>
+    <view class="menu-item" bindtap="navTo" data-url="/pages/chat/chat">
+      <text class="menu-icon">🐍</text>
+      <text>消遬</text>
+      <text class="menu-arrow">〾</text>
+    </view>
+    <view class="menu-item" bindtap="navTo" data-url="/pages/publish-sell/publish-sell">
+      <text class="menu-icon">📞</text>
+      <text>发布服务/物品</text>
+      <text class="menu-arrow">〾</text>
+    </view>
+    <view class="menu-item" bindtap="navTo" data-url="/pages/publish-buy/publish-buy">
+      <text class="menu-icon">📕</text>
+      <text>发布需求</text>
+      <text class="menu-arrow">〾</text>
+    </view>
+  </view>
+
+  <button class="btn-outline logout-btn" bindtap="logout">退出登录</button>
+</view>
