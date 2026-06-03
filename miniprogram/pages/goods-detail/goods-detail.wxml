@@ -1,0 +1,35 @@
+<!-- 物品详情 -->
+<view class="container">
+  <view class="card">
+    <image class="detail-image" src="{{goods.image}}" mode="aspectFill"></image>
+    <view class="flex-between" style="margin-top: 24rpx">
+      <text class="tag tag-goods">物品</text>
+      <text class="price">¥{{goods.price}}</text>
+    </view>
+    <view class="title">{{goods.title}}</view>
+    <view class="meta">
+      <text><text class="label">分类</text> {{goods.category}}</text>
+      <text><text class="label">状态</text> {{goods.condition}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">物品描述</view>
+    <view class="desc">{{goods.description}}</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">卖家</view>
+    <view class="flex-row">
+      <image class="avatar" src="{{goods.seller.avatar}}"></image>
+      <view>
+        <text class="name">{{goods.seller.name}}</text>
+        <text class="time">{{goods.createTime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="btn-primary" bindtap="buyNow">随等下单</button>
+  </view>
+</view>
