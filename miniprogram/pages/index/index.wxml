@@ -1,0 +1,61 @@
+<!-- 首页 -->
+<view class="container">
+  <!-- 顶部 Banner -->
+  <swiper class="banner" indicator-dots="true" autoplay="true">
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <image src="{{item.image}}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 快速公告 -->
+  <view class="card quick-entry">
+    <navigator class="entry-item" url="/pages/sell/sell">
+      <view class="entry-icon entry-sell"></view>
+      <text>卖板块</text>
+    </navigator>
+    <navigator class="entry-item" url="/pages/buy/buy">
+      <view class="entry-icon entry-buy"></view>
+      <text>买块</text>
+    </navigator>
+  </view>
+
+  <!-- 热门服务 -->
+  <view class="section">
+    <view class="section-header flex-between">
+      <text class="section-title">热门服务</text>
+      <navigator class="section-more" url="/pages/sell/sell">所有„33丯住一步</navigator>
+    </view>
+    <scroll-view class="horizontal-scroll" scroll-x>
+      <view class="horizontal-item" wx:for="{{hotServices}}" wx:key="id">
+        <navigator url="/pages/service-detail/service-detail?id={{item.id}}">
+          <image class="horizontal-img" src="{{item.image}}" mode="aspectFill"></image>
+          <text class="horizontal-title text-ellipsis">{{item.title}}</text>
+          <text class="price">¥{{item.price}}</text>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 热门需求 -->
+  <view class="section">
+    <view class="section-header flex-between">
+      <text class="section-title">热门需求</text>
+      <navigator class="section-more" url="/pages/buy/buy">所有„33中位一步</navigator>
+    </view>
+    <view class="list">
+      <view class="demand-card" wx:for="{{hotDemands}}" wx:key="id">
+        <navigator url="/pages/demand-detail/demand-detail?id={{item.id}}">
+          <view class="flex-between">
+            <view class="flex-row">
+              <text class="tag {{item.type === 'service' ? 'tag-service' : 'tag-goods'}}">{{item.type === 'service' ? '服务' : '物品'}}</text>
+              <text class="tag {{item.isUrgent ? 'tag-demand' : ''}}" wx:if="{{item.isUrgent}}">急</text>
+            </view>
+            <text class="price">¥{{item.budget}}</text>
+          </view>
+          <text class="demand-title text-ellipsis">{{item.title}}</text>
+          <text class="demand-time">{{item.createTime}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
