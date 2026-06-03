@@ -1,0 +1,36 @@
+<!-- 发布买 - 需求 -->
+<view class="container">
+  <view class="form">
+    <view class="form-item">
+      <text class="label">需求类型</text>
+      <view class="type-switch flex-row">
+        <view class="type-btn {{form.type === 'goods' ? 'active' : ''}}" bindtap="switchType" data-type="goods">求购物品</view>
+        <view class="type-btn {{form.type === 'service' ? 'active' : ''}}" bindtap="switchType" data-type="service">求服务</view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="label">标题</text>
+      <input class="input" placeholder="{{form.type === 'service' ? '如：急需一名代课同学' : '如：求购二手教材'}}" bindinput="onInput" data-field="title" value="{{form.title}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">预算 (元，选填)</text>
+      <input class="input" type="digit" placeholder="0.00" bindinput="onInput" data-field="budget" value="{{form.budget}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">描述</text>
+      <textarea class="textarea" placeholder="详细描述你的需求..." bindinput="onInput" data-field="description" value="{{form.description}}"></textarea>
+    </view>
+
+    <view class="form-item">
+      <view class="flex-between">
+        <text class="label" style="margin-bottom:0">标记为急需</text>
+        <switch checked="{{form.isUrgent}}" bindchange="onUrgentChange"/>
+      </view>
+    </view>
+
+    <button class="btn-primary submit-btn" bindtap="submit">发布需求</button>
+  </view>
+</view>
