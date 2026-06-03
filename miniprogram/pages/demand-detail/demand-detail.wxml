@@ -1,0 +1,40 @@
+<!-- 需求详情 -->
+<view class="container">
+  <view class="card urgent-card" wx:if="{{demand.isUrgent}}">
+    <text class="urgent-tag">⚡ 急需</text>
+  </view>
+
+  <view class="card">
+    <view class="flex-between">
+      <view class="flex-row">
+        <text class="tag {{demand.type === 'service' ? 'tag-service' : 'tag-goods'}}">{{demand.type === 'service' ? '求服务' : '求购物品'}}</text>
+      </view>
+      <text class="price" wx:if="{{demand.budget}}">预算 ¥{{demand.budget}}</text>
+    </view>
+    <view class="title">{{demand.title}}</view>
+    <view class="meta">
+      <text>{{demand.offerCount}}人响应</text>
+      <text class="divider-v">|</text>
+      <text>{{demand.createTime}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">需求详情</view>
+    <view class="desc">{{demand.description}}</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">发布者</view>
+    <view class="flex-row">
+      <image class="avatar" src="{{demand.user.avatar}}"></image>
+      <view>
+        <text class="name">{{demand.user.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="btn-primary" bindtap="offerService">我来接单</button>
+  </view>
+</view>
