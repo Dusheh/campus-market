@@ -1,0 +1,56 @@
+<!-- 发布卖 - 服务/物品 -->
+<view class="container">
+  <view class="type-switch flex-between">
+    <view class="type-btn {{publishType === 'service' ? 'active' : ''}}" bindtap="switchType" data-type="service">
+      <text>卖服务</text>
+    </view>
+    <view class="type-btn {{publishType === 'goods' ? 'active' : ''}}" bindtap="switchType" data-type="goods">
+      <text>卖物品</text>
+    </view>
+  </view>
+
+  <view class="form">
+    <view class="form-item">
+      <text class="label">标题</text>
+      <input class="input" placeholder="{{publishType === 'service' ? '如：代拿快递、家教辅导...' : '如：闲置教材、二手自行车...'}}" bindinput="onInput" data-field="title" value="{{form.title}}"/>
+    </view>
+
+    <view class="form-item" wx:if="{{publishType === 'service'}}">
+      <text class="label">服务分类</text>
+      <picker mode="selector" range="{{serviceCategories}}" bindchange="onCategoryChange">
+        <view class="picker">{{form.category || '请选择分类'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item" wx:if="{{publishType === 'goods'}}">
+      <text class="label">物品分类</text>
+      <picker mode="selector" range="{{goodsCategories}}" bindchange="onCategoryChange">
+        <view class="picker">{{form.category || '请选择分类'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">价格 (元)</text>
+      <input class="input" type="digit" placeholder="0.00" bindinput="onInput" data-field="price" value="{{form.price}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">描述</text>
+      <textarea class="textarea" placeholder="详细描述你的{{publishType === 'service' ? '服务内容' : '物品情况'}}..." bindinput="onInput" data-field="description" value="{{form.description}}"></textarea>
+    </view>
+
+    <view class="form-item">
+      <text class="label">图片</text>
+      <view class="image-upload">
+        <block wx:for="{{form.images}}" wx:key="index">
+          <image class="upload-img" src="{{item}}" mode="aspectFill"></image>
+        </block>
+        <view class="upload-btn" bindtap="chooseImage" wx:if="{{form.images.length < 9}}">
+          <text class="upload-icon">+</text>
+        </view>
+      </view>
+    </view>
+
+    <button class="btn-primary submit-btn" bindtap="submit">发布</button>
+  </view>
+</view>
